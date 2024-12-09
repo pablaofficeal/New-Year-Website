@@ -1,0 +1,153 @@
+/* Общие стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    color: white;
+    background: url('../images/snowy-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcccb;
+}
+
+/* Контент */
+.content {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.content h1 {
+    font-size: 3rem;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
+    color: #ffeb3b;
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Стили для изображений */
+img {
+    width: 70%;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.8s ease, box-shadow 0.8s ease;
+}
+
+img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Снежинки */
+@keyframes snow {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    font-size: 1.5rem;
+    color: white;
+    animation: snow 10s linear infinite;
+    opacity: 0.8;
+}
+
+.snowflake:nth-child(odd) {
+    animation-duration: 8s;
+    font-size: 1.8rem;
+    opacity: 0.9;
+}
+
+.snowflake:nth-child(even) {
+    animation-duration: 12s;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* Социальные ссылки */
+.social-links {
+    margin-top: 40px;
+}
+
+.social-links a {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #ff6347;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ff4500;
+    transform: scale(1.1);
+}
+
+/* Анимации для ссылок */
+.social-links a:nth-child(1) {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.social-links a:nth-child(2) {
+    animation: fadeIn 1s ease-in-out 0.3s;
+}
+
+.social-links a:nth-child(3) {
+    animation: fadeIn 1s ease-in-out 0.6s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

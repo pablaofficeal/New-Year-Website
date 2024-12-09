@@ -1,0 +1,137 @@
+/* Основной стиль страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #003366; /* Тёмно-синий фон для новогодней атмосферы */
+    color: white;
+    overflow: hidden; /* Скрываем лишнее */
+    position: relative;
+}
+
+/* Снежинки */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 2em;
+    animation: snowfall 10s linear infinite;
+}
+
+/* Анимация для снежинок */
+@keyframes snowfall {
+    0% {
+        transform: translateX(0) translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(50px) translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Регистрационная форма */
+.form-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #ffcc00; /* Золотой цвет для текста заголовка */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Стиль для полей ввода */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2em;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #ffcc00; /* Золотая подсветка при фокусе */
+}
+
+/* Кнопка */
+button {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff9900;
+}
+
+/* Стили для навигации */
+nav {
+    background-color: #003366;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #ffcc00;
+    border-radius: 5px;
+}
+
+/* Дополнительные стили для улучшения новогоднего настроения */
+body::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: white;
+    opacity: 0.8;
+}
